@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NG Basics</title>
+    <link rel="stylesheet" href="vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/blackNBlue.css">
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
+    <script src="scripts/ngBasics.js" charset="utf-8"></script>
+  </head>
+  <body ng-App='myApp'>
+    <h1>NG Basics</h1>
+    <div ng-controller='TestController as tc'>
+      <input type='text' placeholder="wut?" ng-model="tc.input0" />
+      <input type='text' placeholder="url?" ng-model="tc.input1" />
+      <button ng-click="tc.testyClick()">Test button</button>
+      <div class='container row'>
+        <div class='col-sm-3' ng-repeat='thing in tc.allThings'>
+          <img ng-src='{{ thing.url }}' width=100%/>
+          <h2>{{ thing.name }}</h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
